@@ -70,13 +70,13 @@ class SLICProcessor(object):
         self.dis = np.full((self.image_height, self.image_width), np.inf)
 
     def init_clusters(self):
-        h = self.S / 2
-        w = self.S / 2
+        h = int(self.S / 2)
+        w = int(self.S / 2)
         while h < self.image_height:
             while w < self.image_width:
                 self.clusters.append(self.make_cluster(h, w))
                 w += self.S
-            w = self.S / 2
+            w = int(self.S / 2)
             h += self.S
 
     def get_gradient(self, h, w):
@@ -134,8 +134,8 @@ class SLICProcessor(object):
                 sum_h += p[0]
                 sum_w += p[1]
                 number += 1
-                _h = sum_h / number
-                _w = sum_w / number
+                _h = int(sum_h / number)
+                _w = int(sum_w / number)
                 cluster.update(_h, _w, self.data[_h][_w][0], self.data[_h][_w][1], self.data[_h][_w][2])
 
     def save_current_image(self, name):
