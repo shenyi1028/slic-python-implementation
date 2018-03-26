@@ -84,10 +84,9 @@ class SLICProcessor(object):
             w = self.image_width - 2
         if h + 1 >= self.image_height:
             h = self.image_height - 2
-
-        gradient = self.data[w + 1][h + 1][0] - self.data[w][h][0] + \
-                   self.data[w + 1][h + 1][1] - self.data[w][h][1] + \
-                   self.data[w + 1][h + 1][2] - self.data[w][h][2]
+        gradient = self.data[h + 1][w + 1][0] - self.data[h][w][0] + \
+                   self.data[h + 1][w + 1][1] - self.data[h][w][1] + \
+                   self.data[h + 1][w + 1][2] - self.data[h][w][2]
         return gradient
 
     def move_clusters(self):
@@ -161,19 +160,19 @@ class SLICProcessor(object):
 
 
 if __name__ == '__main__':
-    p = SLICProcessor('Lenna.png', 200, 40)
-    p.iterate_10times()
+    # p = SLICProcessor('Lenna.png', 200, 40)
+    # p.iterate_10times()
     p = SLICProcessor('Lenna.png', 300, 40)
     p.iterate_10times()
-    p = SLICProcessor('Lenna.png', 500, 40)
-    p.iterate_10times()
-    p = SLICProcessor('Lenna.png', 1000, 40)
-    p.iterate_10times()
-    p = SLICProcessor('Lenna.png', 200, 5)
-    p.iterate_10times()
-    p = SLICProcessor('Lenna.png', 300, 5)
-    p.iterate_10times()
-    p = SLICProcessor('Lenna.png', 500, 5)
-    p.iterate_10times()
-    p = SLICProcessor('Lenna.png', 1000, 5)
-    p.iterate_10times()
+    # p = SLICProcessor('Lenna.png', 500, 40)
+    # p.iterate_10times()
+    # p = SLICProcessor('Lenna.png', 1000, 40)
+    # p.iterate_10times()
+    # p = SLICProcessor('Lenna.png', 200, 5)
+    # p.iterate_10times()
+    # p = SLICProcessor('Lenna.png', 300, 5)
+    # p.iterate_10times()
+    # p = SLICProcessor('Lenna.png', 500, 5)
+    # p.iterate_10times()
+    # p = SLICProcessor('Lenna.png', 1000, 5)
+    # p.iterate_10times()
